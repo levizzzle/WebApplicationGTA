@@ -37,7 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ms-md-auto text-center">
                     <li class="nav-item active"><a class="nav-link" href="#myCarousel" data-text="Home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-text="GTA Form">GTA Form</a></li>
+                    <li class="nav-item"><a class="nav-link" href="applicant-form.jsp" data-text="GTA Form">GTA Form</a></li>
                     <li class="nav-item"><a class="nav-link" href="#aboutUs-page" data-text="About Us">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" data-text="Help">Help</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.jsp" data-bs-toggle="tooltip"

@@ -6,9 +6,12 @@
 <html>
 <head>
     <title>Applicant Information Form</title>
+    <jsp:include page="header.jsp"></jsp:include>
 </head>
+
 <body>
 
+<br/><br/>
 <form action="applicant-response.jsp">
     First name: <input type="text" name="firstName"/>
     <br/><br/>

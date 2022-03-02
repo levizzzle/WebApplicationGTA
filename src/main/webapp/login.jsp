@@ -9,11 +9,11 @@
         <title>Admin Login |</title>
 
         <!-- style CSS file -->
-        <link rel="stylesheet" type="text/css" href="../../../../../../../Users/Levizzzle/Documents/School/CS451R/OurWebsite/login-style.css">
+        <link rel="stylesheet" type="text/css" href="login-style.css">
 
         <!-- preload the image and css file to prevent flickering problem -->
-        <link rel="preload" href="images/background5.jpg" as="image">
-        <link rel="preload" href="../../../../../../../Users/Levizzzle/Documents/School/CS451R/OurWebsite/login-style.css" as="style">
+        <link rel="preload" href="images/background1.jpg" as="image">
+        <link rel="preload" href="login-style.css" as="style">
     </head>
     <body>
         <div class="main-page">
@@ -22,7 +22,7 @@
                     <!---create a navigation bar on the top right--->
                     <ul id="bar-items">
                         <!---list of items on the navigation bar--->
-                        <li> <a href="mainpage.html">Home</a></li>
+                        <li> <a href="index.jsp">Home</a></li>
                         <li> <button class="loginbtn" onclick="document.getElementById('login-form').style.display='block'"
                                 style="width: auto;">Admin Login</button></li>
                     </ul>
@@ -66,6 +66,6 @@
                     If you can not find the answer you want, contact us. </p>
             </div>
         </div>
-        <script src="../../../../../../../Users/Levizzzle/Documents/School/CS451R/OurWebsite/.js%20files/loginandregister.js"></script>
+        <script src="js files/loginandregister.js"></script>
     </body>
 </html>

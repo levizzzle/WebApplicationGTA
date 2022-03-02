@@ -1,0 +1,36 @@
+CS100 - Computer Fundamentals and Applications
+CS101 - Problem Solving and Programming I
+CS101L - Problem Solving & Programming I Lab
+CS191 - Discrete Structures I
+CS201R - Problem Solving and Programming II
+CS201L - Problem Solving and Programming II Lab
+CS281R - Introduction to Computer Architecture and Organization
+CS291 - Discrete Structures II
+CS303 - Data Structures
+CS304WI - Ethics and Professionalism
+CS320 - Data Communications and Networking
+CS371 - Database Design, Implementation and Validation
+CS394R - Applied Probability
+CS404 - Introduction to Algorithms and Complexity
+CS420 - Advanced Networking and Applications
+CS421A - Foundations of Data Networks
+CS423 - Client/Server Programming and Applications
+CS424 - Software Methods and Tools
+CS431 - Introduction to Operating Systems
+CS441 - Programming Languages: Design and Implementation
+CS449 - Foundations of Software Engineering
+CS451R - Software Engineering Capstone
+CS456 - Human Computer Interface
+CS457 - Software Architecture: Requirements & Design
+CS458 - Software Testing and Verification
+CS461 - Introduction to Artificial Intelligence
+CS465R - Introduction to Statistical Learning
+CS470 - Introduction to Database Management Systems
+CS479 - Introduction to Computer Vision
+CS490 - Special Topics
+CS490CR - Special Topics
+CS490R - Special Topics
+CS491 - Internship
+CS497 - Directed Readings
+CS498 - Research Seminar
+CS499 - Undergraduate Research

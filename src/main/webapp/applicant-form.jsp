@@ -37,7 +37,7 @@
             out.print("</br>");
         }
     %>
-    </br>
+    </br.
     <input type="submit" value="Submit"/>
     </td>
 </form>

@@ -40,6 +40,24 @@ body::-webkit-scrollbar {
     box-shadow: 0 5px 15px 5px rgb(0, 0, 0);
 }
 
+
+.hidden {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+
+input[type=checkbox]+label {
+    color: #ccc;
+    font-style: italic;
+}
+
+input[type=checkbox]:checked+label {
+    color: #f00;
+    font-style: normal;
+}
+
+
 /* Navbar CSS */
 .container-fluid{
     background-color: rgba(44, 41, 42, 0.979);

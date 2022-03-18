@@ -1,0 +1,145 @@
+        <!--About Us-->
+        <div id="aboutUs-page">
+            <div class="content">
+                <div class="title">
+                    <h1>Hah, it's time to become a great sidekick!!!</h1>
+                </div>
+                <div class="para">
+                    <p>Batman has Robin (a bunch of Robins); Sherlock Homes needs John H. Watson on his side; Green Arrow has Arsenal and Speedy. 
+                    So what is your professor need? YOU, a person who can flip the table and is ready to take a man job.</p>
+                </div>    
+            </div>
+            <div id="card1" class="card" style="width: 270px;">
+                <div class="card-img c-1"></div>
+                <h2>Title</h2>
+            </div>
+            <div id="card2" class="card" style="width: 270px;">
+                <div class="card-img c-2"></div>
+                <h2>Title</h2>
+            </div>
+            <div id="card3" class="card" style="width: 270px;">
+                <div class="card-img c-3"></div>
+                <h2>Title</h2>
+            </div>
+        </div> 
+
+/* About Us CSS */
+#aboutUs-page{
+    width: 100vw;
+    height: 100vh;  
+    background-image: url(images/background1.jpg);
+    background-color: black;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    border: blueviolet solid;
+    
+}
+
+.content{
+    position: absolute;
+    border: red solid;
+    background-color: black;
+    opacity: 0.7;
+    color: lightpink; 
+    border: red solid;
+    top: 20%;
+    left: 15%;
+    max-width: 500px;
+    max-height: 700px;
+}
+
+@media (max-width: 900px){
+    .content{
+        height: 50vh !important;
+        top: 0;
+        left: 0;
+        opacity: 0.9;
+    }   
+    #aboutUs-page{
+        padding: 0;
+    }
+}
+
+.content h1{
+    font-size: clamp(28px, 1.5vw, 60px);
+    text-transform: uppercase;
+    padding-top: 15px;
+}
+
+.content p{
+    font-size: clamp(18px, 1.5vw, 30px);
+    padding: 15px 0;
+}
+
+.card{
+    position: absolute;
+}
+
+#card1{
+    background-image: linear-gradient(to right, #dbdcd7 0%, #c5c3ba 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
+    background-size: 400%;
+    animation: bg-animation 15s infinite alternate;
+    color: yellow;
+    z-index: 1;
+
+    max-height: 400px;
+    border-radius: 15px !important;
+    top: 48%;
+    left: 50%;
+}
+
+#card2{
+    background-image: linear-gradient(to right, red, blue, pink, darkgrey, yellow);
+    background-size: 400%;
+    animation: bg-animation 15s infinite alternate;
+    color: yellow;
+    z-index: 2;
+    width: max(250px, 350px);
+    max-height: 500px;
+    border-radius: 15px !important;
+    top: 32%;
+    left: 47%;
+}
+
+#card3{
+    background-image: linear-gradient(to right, #4fb576 0%, #44c489 30%, #28a9ae 46%, #28a2b7 59%, #4c7788 71%, #6c4f63 86%, #432c39 100%);
+    background-size: 400%;
+    animation: bg-animation 15s infinite alternate;
+    color: yellow;
+    z-index: 3;
+    
+    max-height: 400px;
+    border-radius: 15px !important;
+}
+
+@keyframes bg-animation{
+    0%{
+        background-position: right;
+    }
+    100%{
+        background-position: left;
+    }
+}
+
+.card-img{
+    background-color: palegoldenrod;
+    height: 80%;
+    margin-bottom: 10px;
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.card h2{
+    text-align: center !important;
+}
+
+    background-image: url(images/background1.jpg);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title -->
+    <title>Home Page | GTAHelper</title>
+
+    <!-- style CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- preload images and css file to prevent flickering problem -->
+    <link rel="preload" href="images/background1.jpg" as="image">
+    <link rel="preload" href="images/logo2.jpg" as="image">
+    <link rel="preload" href="images/subpage4.jpg" as="image">
+    <link rel="preload" href="images/subpage5.jpg" as="image">
+    <link rel="preload" href="images/subpage7.jpg" as="image">
+    <link rel="preload" href="images/aboutus-img.jpg" as="image">
+    <link rel="preload" href="style.css" as="style">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <!--create a top button-->
+    <button onclick="topFunction()" id="topBtn" title="Go to top">UP</button>
+
+    <!--header for navigation bar-->
+    <div id="header-section">
+        <div class="container-fluid justify-content-end">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="index.html"><img class="logo" src="images/logo2.jpg"></img>GTAHelper</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav ms-md-auto text-center">
+                        <li class="nav-item active"><a class="nav-link" href="#myCarousel" data-text="Home">Home</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#aboutUs-page" data-text="About Us">About Us</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#GTAform-page" data-text="GTA Form">GTA Form</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#help-page" data-text="Help">Help</a></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tooltip" type="reset"
+                                data-bs-placement="bottom" data-text="Log Out" onclick="logOut()">Log Out</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!--for crousel slider-->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-caption d-none d-md-block">
+                    <p>teaching assistants were created because teachers need heroes too.</p>
+                </div>
+            </div>
+            <div class="carousel-item"></div>
+            <div class="carousel-item"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!--About Us-->
+    <div id="aboutUs-page">
+        <div class="container-fluid">
+            <h1>About Us</h1>
+            <div class="wrapper">
+                <div class="content">
+                    <h3>It's time to become a great sidekick!!!</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quam quisquam impedit
+                        officiis neque facilis, necessitatibus corrupti tempore aut, atque quo vero? Perspiciatis
+                        quae sed culpa, possimus deserunt numquam totam.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quam quisquam impedit
+                        officiis neque facilis, necessitatibus corrupti tempore aut, atque quo vero? Perspiciatis
+                        quae sed culpa, possimus deserunt numquam totam.</p>
+                </div>
+                <div class="img-section">
+                    <img src="images/aboutus-img.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--GTA Form-->
+    <div id="GTAform-page">
+        <div class="container">
+            <div class="title">GTA Form</div>
+            <form data-testid="testForm">
+                <div class="info-box">
+                    <div class="formField">
+                        <span class="detail">First Name:</span>
+                        <input type="text" placeholder="First Name" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">Sur Name:</span>
+                        <input type="text" placeholder="Sur Name" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">Student ID:</span>
+                        <input type="text" placeholder="Student ID" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">UMKC Email:</span>
+                        <input type="text" placeholder="UMKC Email" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">Level(BS/MS/PHD):</span>
+                        <input type="text" placeholder="BS/MS/PHD" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">Graduating Semester:</span>
+                        <input type="text" placeholder="Season Year" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">UMKC Cumulative GPA (leave blank if first semester is in progress):</span>
+                        <input type="text" placeholder="GPA" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">Hours Completed at UMKC (leave blank if first semester is in
+                            progress):</span>
+                        <input type="text" placeholder="Hours" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">Name of Research Advisor (if applicable):</span>
+                        <input type="text" placeholder="Advisor Name" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">Major (CS/IT/ECE/EE):</span>
+                        <input type="text" placeholder="Major" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">Courses you could teach or grade for (ex. CS 201L/CS 5540/ECE 216,
+                            etc.):</span>
+                        <input type="text" placeholder="Courses" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">Status-International or Domestic (If you are on an F-1 visa you are
+                            international.
+                            If you are a citizen or permanent resident, you are domestic):</span>
+                        <input type="text" placeholder="Status" required>
+                    </div>
+                    <div class="formField">
+                        <span class="detail">(International Students ONLY) Are you GTA Certified? If so, which term did
+                            you complete your certification?:</span>
+                        <input type="text" placeholder="Certificate" required>
+                    </div>
+                </div>
+                <button type="submit" class="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="help-page">
+        <div class="container c1">
+            <div class="wrap">
+                <h3>You need help ...!?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum corporis repellat ipsam explicabo
+                    unde
+                    praesentium quisquam voluptate dignissimos quis, voluptatem tempora nisi dolore consectetur, ducimus
+                    dolorem commodi ratione accusantium? Provident.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam necessitatibus deleniti perspiciatis
+                    repellat impedit alias sed in dolor sunt explicabo quisquam magni, delectus accusamus provident quo
+                    nesciunt itaque numquam libero.</p>
+            </div>
+        </div>
+        <div class="container c2">
+            <div class="wrap">
+                <h2>Contact Info:</h2>
+            </div>
+        </div>
+    </div>
+
+    <!---JavaScript Bootstrap--->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+
+    <!--TopBtn function-->
+    <script>
+        //Get the button
+        var topbutton = document.getElementById("topBtn");
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topbutton.style.display = "block";
+            }
+            else {
+                topbutton.style.display = "none";
+            }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <script src=".js files/logout.js"></script>
+</body>
+
+</html>

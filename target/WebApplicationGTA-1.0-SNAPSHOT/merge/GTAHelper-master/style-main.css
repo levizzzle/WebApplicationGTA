@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+#headpart{
+    width: 100%;
+    background: rgb(0,102,204);
+    background: linear-gradient(180deg, rgba(0,102,204,1) 0%, rgba(0,102,204,1) 90%, rgb(253,183,26,1) 90%);
+    display: flex;
+}
+
+#headpart img{
+    width: clamp(100px, 10vw, 140px);
+    height: auto;
+    padding-bottom: 5px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+#headpart div{
+    margin: auto;
+    color: white;
+    font-size: clamp(20px, 2vw, 25px);
+    font-weight: 600;
+}
+
+#bodypart{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#bodypart .student{
+    float: left;
+    margin-top: 180px;
+    margin-right: 100px;
+    width: 300px;
+    height: 300px;
+}
+
+#bodypart .staff{
+    float: right;
+    margin-top: 180px;
+    margin-left: 100px;
+    width: 300px;
+    height: 300px;
+}
+
+.text{
+    font-size: 40px;
+    text-align: center;
+}
+
+.holder{
+    background-color: rgb(146, 112, 112, 0.12);
+}
+
+.holder img{
+    width: 300px;
+    height: 250px;
+    justify-content: center;
+}
+
+.holder p{
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 900px){
+    #bodypart{
+        width: 100%;
+        height: auto;
+        display: inline;
+    }
+
+    #bodypart .student{
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+    
+    #bodypart .staff{
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}
+

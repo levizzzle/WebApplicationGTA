@@ -10,10 +10,9 @@
 <body>
 
     <!--create a top button-->
-    <button onclick="topFunction()" id="topBtn" title="Go to top">UP</button>
+<%--    <button onclick="topFunction()" id="topBtn" title="Go to top">UP</button>--%>
 
 <%--    <a href="hello-servlet">Servlet</a>--%>
-
 
     <!--for crousel slider-->
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -49,28 +48,28 @@
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"--%>
+<%--            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>--%>
 
     <!--TopBtn function-->
-    <script>
-        //Get the button
-        var topbutton = document.getElementById("topBtn");
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        function scrollFunction(){
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                topbutton.style.display = "block";
-            }
-            else{
-                topbutton.style.display = "none";
-            }
-        }
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }</script>
+<%--    <script>--%>
+<%--        //Get the button--%>
+<%--        var topbutton = document.getElementById("topBtn");--%>
+<%--        // When the user scrolls down 20px from the top of the document, show the button--%>
+<%--        window.onscroll = function() {scrollFunction()};--%>
+<%--        function scrollFunction(){--%>
+<%--            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {--%>
+<%--                topbutton.style.display = "block";--%>
+<%--            }--%>
+<%--            else{--%>
+<%--                topbutton.style.display = "none";--%>
+<%--            }--%>
+<%--        }--%>
+<%--        // When the user clicks on the button, scroll to the top of the document--%>
+<%--        function topFunction() {--%>
+<%--            document.body.scrollTop = 0;--%>
+<%--            document.documentElement.scrollTop = 0;--%>
+<%--        }</script>--%>
 </body>
 
 </html>

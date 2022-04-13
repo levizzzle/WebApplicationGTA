@@ -27,29 +27,10 @@
 
 <br>
 <h1>Student Portal</h1>
+<form id="apply" name="applyform" class="apply-form" action="GTAform.jsp" method="GET">
+    <button type="submit" id="applybtn" onclick="">Apply</button>
+</form>
 
-<section id="bodypart">
-    <div class="table-responsive-lg">
-        <table class="table table-bordered caption-top" id="myTable">
-            <caption>Table</caption>
-            <thead class="table-primary">
-            <!-- <th scope="col">#</th> -->
-            <th scope="col">FirstName</th>
-            <th scope="col">SurName</th>
-            <th scope="col">Student ID</th>
-            <th scope="col">Mail</th>
-            <th scope="col">Academic Level</th>
-            <th scope="col">Graduated Year</th>
-            <th scope="col">GPA</th>
-            <th scope="col">Hours</th>
-            <th scope="col">Advisor</th>
-            <th scope="col">Major</th>
-            <th scope="col">Courses</th>
-            <th scope="col">Status</th>
-            </thead>
-        </table>
-    </div>
-</section>
 <script src=".js files/logout.js"></script>
 <script src=".js files/getData.js"></script>
 

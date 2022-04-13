@@ -14,26 +14,24 @@
 </head>
 
 <body>
-<%--<section id="headpart">--%>
-<%--    <a href="https://www.umkc.edu/"><img src="/images/UMKC_White.png" alt=""></a>--%>
-<%--    <div class="title">GTA Application Portal</div>--%>
-<%--</section>--%>
+
 <section id="bodypart">
     <div class="container-sm">
         <!-- <h1>LOGIN</h1> -->
-        <form id="login" name="theform" class="login-form" action="admin.jsp">
+        <form id="login" name="theform" class="login-form" action="TestServlet" method="GET">
             <div class="formField">
-                <input type="text" placeholder="Username" id="username" required>
+                <input type="text" placeholder="Username" name="username" id="username" required>
             </div>
             <div class="formField">
-                <input type="password" placeholder="Password" id="password" required>
+                <input type="password" placeholder="Password" name="password" id="password" required>
             </div>
             <button type="submit" class="submitbtn" onclick="getInput()">Log in</button>
             <p class="message">Forgot password? <a href="https://www.umkc.edu/is/password/">Click here!</a>
         </form>
     </div>
 </section>
-<script src=".js files/login.js"></script>
+
+<%--<script src=".js files/login.js"></script>--%>
 </body>
 
 </html>

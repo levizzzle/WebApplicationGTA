@@ -1,4 +1,5 @@
 <%@ page import="java.util.Locale, com.example.webapplicationgta.*" %>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <html>
 <header>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -7,8 +8,8 @@
 <body>
 
 <h1>TEST JSP</h1>
-
-
+<%--<c:set var="stuff" value="<%= new java.util.Date() %>" />--%>
+Time on the server is ${stuff}
 
 </body>
 

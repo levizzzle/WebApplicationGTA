@@ -72,5 +72,7 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-jsp-api:10.0.16" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-el-api:10.0.16" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-servlet-api:10.0.16" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.28" level="project" />
+    <orderEntry type="library" name="mysql.connector.java" level="application" />
   </component>
 </module>

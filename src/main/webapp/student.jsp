@@ -27,6 +27,19 @@
 
 <br>
 <h1>Student Portal</h1>
+
+<br/>
+<br/>
+
+<h2>Graduate Teaching Assistantships</h2>
+
+<p>Students can apply for a Graduate Teaching Assistant (GTA) position,
+    which comes with a stipend of about $12,000 per year and a tuition waiver for up to nine credit hours per regular semester.</p>
+
+Summer teaching is often available, for an additional salary of $2,000 to $4,000.
+<br/>
+<br/>
+
 <form id="apply" name="applyform" class="apply-form" action="GTAform.jsp" method="GET">
     <button type="submit" id="applybtn" onclick="">Apply</button>
 </form>

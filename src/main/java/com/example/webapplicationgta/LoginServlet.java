@@ -4,42 +4,78 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
+import javax.annotation.Resource;
+import javax.sql.DataSource;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    private UserDBUtil userDBUtil;
+
+    @Resource(name = "jdbc/web_User_tracker")
+    private DataSource dataSource;
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+
+        try{
+            userDBUtil = new UserDBUtil(dataSource);
+        }
+        catch (Exception ex){
+            throw new ServletException(ex);
+        }
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            validateUser(request, response);
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
 
-        String page = (request.getParameter("username").equals("admin") ? "admin.jsp": "student.jsp");
+    }
 
-        // get students from data util class
-        List<Student> students = StudentDataUtil.getStudents();
+    private void validateUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String page = null;
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
-        // add students to request object
-        request.setAttribute("student_list", students);
+        // get Users from db util
+        List<User> users = userDBUtil.getUsers();
 
-        // get request dispatcher
+        // add Users to the request
+        request.setAttribute("USER_LIST", users);
+
+        for (User user: users){
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)){
+                page = (user.getIsAdmin() ? "/admin.jsp" : "/student.jsp");
+                break;
+            }
+            else {
+                page = "/login-failed.jsp";
+            }
+        }
+
+        // send to JSP page
         RequestDispatcher dispatcher = request.getRequestDispatcher(page);
-
-        // forward to JSP
         dispatcher.forward(request, response);
+    }
 
-//        // set the content type
-//        response.setContentType("text/html");
-//
-//        // get the printwriter
-//        PrintWriter out = response.getWriter();
-//
-//        //generate HTML content
-//        out.println("<html><body>");
-//        out.println("<h2>Username: " + request.getParameter("username"));
-//        out.println("<h2>Password: " + request.getParameter("password"));
-//        out.println("<hr>");
-//        out.println("Time on the server is: " + new java.util.Date());
-//        out.println("</body></html>");
+    private void listUsers(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        // get Users from db util
+        List<User> users = userDBUtil.getUsers();
+
+        // add Users to the request
+        request.setAttribute("USER_LIST", users);
+
+        // send to JSP page
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/list-users.jsp");
+        dispatcher.forward(request, response);
     }
 
     @Override

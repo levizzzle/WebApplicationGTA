@@ -60,67 +60,67 @@
 <div id="GTAform-page">
     <div class="container">
         <div class="title">GTA Form</div>
-        <form method="get" action="admin.html">
+        <form method="get" action="SubmitApplicationServlet">
             <div class="info-box">
                 <div class="formField">
                     <span class="detail">First Name:</span>
-                    <input type="text" id="fname" placeholder="First Name">
+                    <input type="text" id="fname" name="gtaForm" placeholder="First Name">
                 </div>
                 <div class="formField">
                     <span class="detail">Sur Name:</span>
-                    <input type="text" id="sname" placeholder="Sur Name">
+                    <input type="text" id="sname" name="gtaForm" placeholder="Sur Name">
                 </div>
                 <div class="formField">
                     <span class="detail">Student ID:</span>
-                    <input type="text" id="studentid" placeholder="Student ID">
+                    <input type="text" id="studentid" name="gtaForm" placeholder="Student ID">
                 </div>
                 <div class="formField">
                     <span class="detail">UMKC Email:</span>
-                    <input type="text" id="mail" placeholder="UMKC Email">
+                    <input type="text" id="mail" name="gtaForm" placeholder="UMKC Email">
                 </div>
                 <div class="formField">
                     <span class="detail">Level(BS/MS/PHD):</span>
-                    <input type="text" id="level" placeholder="BS/MS/PHD">
+                    <input type="text" id="level" name="gtaForm" placeholder="BS/MS/PHD">
                 </div>
                 <div class="formField">
                     <span class="detail">Graduating Semester:</span>
-                    <input type="text" id="gradyear" placeholder="Season Year">
+                    <input type="text" id="gradyear" name="gtaForm" placeholder="Season Year">
                 </div>
                 <div class="formField">
                     <span class="detail">UMKC Cumulative GPA (leave blank if first semester is in progress):</span>
-                    <input type="text" id="gpa" placeholder="GPA">
+                    <input type="text" id="gpa" name="gtaForm" placeholder="GPA">
                 </div>
                 <div class="formField">
                         <span class="detail">Hours Completed at UMKC (leave blank if first semester is in
                             progress):</span>
-                    <input type="text" id="hours" placeholder="Hours">
+                    <input type="text" id="hours" name="gtaForm" placeholder="Hours">
                 </div>
                 <div class="formField">
                     <span class="detail">Name of Research Advisor (if applicable):</span>
-                    <input type="text" id="advisor" placeholder="Advisor Name">
+                    <input type="text" id="advisor" name="gtaForm" placeholder="Advisor Name">
                 </div>
                 <div class="formField">
                     <span class="detail">Major (CS/IT/ECE/EE):</span>
-                    <input type="text" id="major" placeholder="Major">
+                    <input type="text" id="major" name="gtaForm" placeholder="Major">
                 </div>
                 <div class="formField">
                         <span class="detail">Courses you could teach or grade for (ex. CS 201L/CS 5540/ECE 216,
                             etc.):</span>
-                    <input type="text" id="courses" placeholder="Courses">
+                    <input type="text" id="courses" name="gtaForm" placeholder="Courses">
                 </div>
                 <div class="formField">
                         <span class="detail">Status-International or Domestic (If you are on an F-1 visa you are
                             international.
                             If you are a citizen or permanent resident, you are domestic):</span>
-                    <input type="text" id="status" placeholder="Status">
+                    <input type="text" id="status" name="gtaForm" placeholder="Status">
                 </div>
                 <div class="formField">
                         <span class="detail">(International Students ONLY) Are you GTA Certified? If so, which term did
                             you complete your certification?:</span>
-                    <input type="text" placeholder="Certificate">
+                    <input type="text" name="gtaForm" placeholder="Certificate">
                 </div>
             </div>
-            <button type="reset" class="submitBtn" id="submittBtn" onclick="AddRow()">Submit</button>
+            <button type="submit" class="submitBtn" id="submittBtn" onclick="getInput()">Submit</button>
         </form>
     </div>
 

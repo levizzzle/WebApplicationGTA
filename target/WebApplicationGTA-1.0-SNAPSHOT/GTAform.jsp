@@ -117,7 +117,7 @@
                 <div class="formField">
                         <span class="detail">(International Students ONLY) Are you GTA Certified? If so, which term did
                             you complete your certification?:</span>
-                    <input type="text" name="gtaForm" placeholder="Certificate">
+                    <input type="text" id="certificate" name="gtaForm" placeholder="Certificate">
                 </div>
             </div>
             <button type="submit" class="submitBtn" id="submittBtn" onclick="getInput()">Submit</button>

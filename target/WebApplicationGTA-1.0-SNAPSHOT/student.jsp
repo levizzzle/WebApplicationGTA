@@ -32,7 +32,7 @@
 <section id="bodypart">
     <div class="student">
         <div class="holder">
-            <a href="gta.html">
+            <a href="GTAform.jsp" >
                 <img src="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none'
                         xmlns='http://www.w3.org/2000/svg' %3E%3Cpath
                         d='M10 6H14C16 6 16 5 16 4C16 2 15 2 14 2H10C9 2 8 2 8 4C8 6 9 6 10 6Z' stroke='%23292D32'

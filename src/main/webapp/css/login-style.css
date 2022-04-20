@@ -1,246 +1,126 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
- .main-page{
-    min-height: 100%;
+body {
     width: 100%;
-    margin: auto;
-    background-image: url(images/background1.jpg);
-    background-color: black;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: fixed;
-    overflow: hidden;
-    display: block;
-    flex: 1;
+    height: 100vh;
+    scrollbar-width: none;
+    /* Firefox */
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
-.navbar{
-    display: flex;
-    flex: 1;
-    height: 120px;
+#headpart {
     width: 100%;
-    display: inline-block;
+    background: rgb(0, 102, 204);
+    background: linear-gradient(180deg, rgba(0, 102, 204, 1) 0%, rgba(0, 102, 204, 1) 90%, rgb(253, 183, 26, 1) 90%);
+    display: grid;
+    grid-auto-flow: column;
+}
+
+#headpart img {
+    width: clamp(100px, 10vw, 140px);
+    height: auto;
+    padding-bottom: 15px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+#headpart .title {
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: clamp(18px, 2vw, 25px);
+    font-weight: 600;
+}
+
+#headpart .holder {
+    display: grid;
     align-items: center;
-    padding: 50px;
-    padding-right: 10px;
-    padding-top: 40px;
-    position: fixed;
-    border: none;
+    justify-items: right;
 }
 
-nav{
-    flex: 1;
-    text-align: right;
-}
-
-nav ul{
-    display: inline;
-    list-style: none;
-}
-
-nav ul li{
-    flex: 1;
-    display: flex;
-    margin-left: 70px;
-    float: left;
-    border: none;
-    text-size-adjust: auto;
-}
-
-nav ul li:last-child{
-    float: right;
-    margin-right: 70px;
-}
-
-nav ul li a{
-    flex: 1;
-    text-decoration: solid;
-    font-size: 40px;
-    color: rgb(140, 0, 255);
-    font-family: ui-sans-serif;
-    transition: .5s ease-in-out;
-}
-
-nav ul li a:hover{
-    color: #ffff00;
-}
-
-nav ul li button{
-    font-size: 40px;
-    color: rgb(140, 0, 255);
-    outline: none;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-family: ui-sans-serif;
-    transition: .5s ease-in-out;
-}
-
-nav ul li button:hover{
-    color: #ffff00;
-} 
-
-.loginbtn{
-    color: #ffff00;
-}
-
-.note{
-
-    border: none;
-    position: fixed;
-    top: 75%;
-    left: 3%;
-    bottom: 5%;
-    right: 65%;
-    background: rgba(0, 0, 0, .1);
-    font-family: ui-sans-serif;
-    padding-left: 5px;
-    flex: 1;
-}
-
-.note h5{
-    font-size: 30px;
-    color: rgb(140, 0, 255);
-    text-decoration: underline;
-    font-family: ui-sans-serif;
-    font-style: italic;
-    padding-left: 15px;
-    text-size-adjust: auto;
-}
-
-.note p{
-    font-size: 23px;
-    color: rgb(140, 0, 255);
-    font-family: ui-sans-serif;
-    text-size-adjust: auto;
-}
-
-.box{
-    width: 380px;
-    height: 500px;
-    display: flex; 
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    flex: 1;
-} 
-
-.form-box{
-    width: 380px;
-    height: 500px;
-    position: absolute; 
-    padding: 20px;
-    overflow: hidden;
-    border: none;
-    background: rgba(44, 41, 41, 0.1);
-    box-shadow: 5px 10px 15px 10px;
-}
-
-.button-box{
-    width: 220px;
-    position: relative;
-    margin: 40px auto;
-    box-shadow: 0 0 20px 4px;
-    border-radius: 20px;
-    color: rgb(140, 0, 255);
-    display: flex;
-    flex: 1;
-}
-
-#btn{
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 110px;
-    height: 100%;
-    background:#ffff00;
-    border-radius: 30px;
-    transition: .5s ease-in-out;
-}
-
-.togglebtn{
-    padding: 10px 30px;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    outline: none;
-    position: relative;
-    color: rgb(140, 0, 255);
-} 
-
-.input-group-login{
-    top: 150px;
-    position: absolute;
-    width: 280px;
-    transition: .5s ease-in-out;
-}
-
-.input-group-register{
-    top: 120px;
-    position: absolute;
-    width: 280px;
-    transition: .5s ease-in-out;
-}
-
-.input-field{
+#bodypart {
     width: 100%;
-    padding: 10px 0;
-    margin: 5px 0;
-    border-left: 0;
-    border-top: 0;
-    border-right: 0;
-    border-bottom: 2px solid #ffff00;
-    outline: none;
-    border-radius: 5px;
-    background: transparent;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), url('/css/background2.jpg');*/
+
+    /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/background2.jpg');*/
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url("/css/background2.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.submitbtn{
-    width: 70%;
-    padding: 10px 30px;
-    cursor: pointer;
-    display: block;
+.container-sm {
+    background: linear-gradient(rgb(255, 255, 255, 0.9));
+    padding: 5% 3%;
+    border-radius: 10px;
+    position: relative;
     margin: auto;
-    background:#ffff00;
+    padding: 45px;
+    text-align: center;
+    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.6); */
+}
+
+.container-sm h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.container-sm input {
+    background: #f2f2f2;
+    width: 100%;
+    outline: 0;
     border: 0;
-    outline: none;
-    border-radius: 25px;
-    color: rgb(140, 0, 255);
-    text-decoration: solid;
-    box-shadow: 0 0 30px 5px;
-}
-
-.check-box{
-    margin: 25px 10px 38px 10px;
-}
-
-span{
-    color:rgb(140, 0, 255);
+    margin-bottom: 20px;
+    padding: 15px;
     font-size: 14px;
-    bottom: 70px;
-    position: absolute;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
 
-#login{
-    left: 50px;
+.container-sm button {
+    width: 100%;
+    background: rgb(255, 213, 47, 1);
+    text-transform: uppercase;
+    outline: 0;
+    border: 0;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: .5s ease-in-out;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-#login input{
-    color: rgb(140, 0, 255);
-    font-size: 15px;
+.container-sm button:hover {
+    background: rgb(253, 183, 26, 1);
+
 }
 
-#register{
-    left: 450px;
+.container-sm p {
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
 }
 
-#register input{
-    color: rgb(140, 0, 255);
-    font-size: 15px;
+.container-sm p a {
+    color: rgb(255, 213, 47, 1);
+    letter-spacing: 1px;
+}
+
+.container-sm p a:hover {
+    color: rgb(253, 183, 26, 1);
 }

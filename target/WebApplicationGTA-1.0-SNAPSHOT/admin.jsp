@@ -3,13 +3,13 @@
 <html lang="en">
 
 <head>
-<%--    <jsp:include page="header.jsp"></jsp:include>--%>
+    <jsp:include page="header.jsp"></jsp:include>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMKC | GTA Application Portal</title>
-    <link rel="stylesheet" href="style-admin.css">
+    <link rel="stylesheet" type="text/css" href="css/style-admin.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,16 +19,16 @@
 </head>
 
 <body>
-<section id="headpart">
-    <a href="https://www.umkc.edu/"><img src="${pageContext.request.contextPath}/images/UMKC_White.png" alt=""></a>
-    <div class="title">GTA Application Portal</div>
-    <div class="holder">
-        <button type="reset" id="logOutBtn" onclick="logOut()">Log Out</button>
-    </div>
-</section>
 
-<br>
-<h1>Admin Portal</h1>
+<!-- New addition for 4 buttons -->
+<section id="subheadpart">
+    <button type="button" id="aBtn">Pending Applications</button>
+    <button type="button" id="aBtn1">Bookmarked Apps</button>
+    <button type="button" id="aBtn2">Recently Denied</button>
+    <button type="button" id="aBtn3">Recently Accepted</button>
+</section>
+<!-- ------------ -->
+
 
 <section id="bodypart">
     <div class="table-responsive-lg">

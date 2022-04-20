@@ -11,7 +11,7 @@
     <title>UMKC | GTA Form</title>
 
     <!-- style CSS file -->
-    <link rel="stylesheet" type="text/css" href="style-gta.css">
+    <link rel="stylesheet" type="text/css" href="css/style-gta.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"

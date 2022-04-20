@@ -1,0 +1,29 @@
+#headpart {
+    width: 100%;
+    background: rgb(0, 102, 204);
+    background: linear-gradient(180deg, rgba(0, 102, 204, 1) 0%, rgba(0, 102, 204, 1) 90%, rgb(253, 183, 26, 1) 90%);
+    display: grid;
+    grid-auto-flow: column;
+}
+
+#headpart img {
+    width: clamp(100px, 10vw, 140px);
+    height: auto;
+    padding-bottom: 15px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+#headpart .title {
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: clamp(18px, 2vw, 25px);
+    font-weight: 600;
+}
+
+#headpart .holder {
+    display: grid;
+    align-items: center;
+    justify-items: right;
+}

@@ -1,16 +1,24 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <jsp:include page="header.jsp"></jsp:include>
+<%--    <jsp:include page="header.jsp"></jsp:include>--%>
+    <link rel="preload" href="images/UMKC_white_cropped.png" as="image">
+<%--    <link rel="stylesheet" type="text/css" href="css/header.css">--%>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UMKC | GTA Application Portal</title>
-    <link rel="stylesheet" type="text/css" href="style-login.css">
-
+    <section id="headpart">
+        <a href="https://www.umkc.edu/"><img src="${pageContext.request.contextPath}/images/UMKC_white_cropped.png" alt=""></a>
+        <div class="title">GTA Application Portal</div>
+        <div class="holder">
+            <button type="reset" id="logOutBtn" onclick="logOut()">Log Out</button>
+        </div>
+    </section>
+<%--    <meta charset="UTF-8">--%>
+<%--    <meta http-equiv="X-UA-Compatible" content="IE=edge">--%>
+<%--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
+<%--    <title>UMKC | GTA Application Portal</title>--%>
+    <link rel="stylesheet" type="text/css" href="css/style-login.css">
 </head>
 
 <body>

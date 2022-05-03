@@ -17,12 +17,20 @@
 
 <body>
     <section id="headpart">
-        <a href="https://www.umkc.edu/"><img src="/images/UMKC_White.png" alt=""></a>
+        <a href="https://www.umkc.edu/"><img src="/images/UMKC_white_cropped.png" alt=""></a>
         <div class="title">GTA Application Portal</div>
         <div class="holder">
             <button type="reset" id="logOutBtn" onclick="logOut()">Log Out</button>
         </div>
     </section>
+
+    <section id="subheadpart">
+        <button type="button" id="aBtn">Pending Applications</button>
+        <button type="button" id="aBtn">Bookmarked Apps</button>
+        <button type="button" id="aBtn">Recently Denied</button>
+        <button type="button" id="aBtn">Recently Accepted</button>
+    </section>
+
     <section id="bodypart">
         <div class="table-responsive-lg">
             <table class="table table-bordered caption-top" id="myTable">
@@ -45,7 +53,6 @@
             </table>
         </div>
     </section>
-    <script src=".js files/logout.js"></script>
     <script src=".js files/getData.js"></script>
 
     <!---JavaScript Bootstrap--->

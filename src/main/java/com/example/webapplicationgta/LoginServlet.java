@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 
         for (User user: users){
             if (user.getUsername().equals(username) && user.getPassword().equals(password)){
-                page = (user.getIsAdmin() ? "/admin.jsp" : "/student.jsp");
+                page = (user.getIsAdmin() ? "/ApplicationsServlet" : "/student.jsp");
                 break;
             }
             else {

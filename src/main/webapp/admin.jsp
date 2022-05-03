@@ -1,3 +1,6 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.example.webapplicationgta.Application" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMKC | GTA Application Portal</title>
-    <link rel="stylesheet" type="text/css" href="css/style-admin.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -29,6 +32,9 @@
 </section>
 <!-- ------------ -->
 
+<%
+    List<Application> applications = (List<Application>) request.getAttribute("APPLICATION_LIST");
+%>
 
 <section id="bodypart">
     <div class="table-responsive-lg">
@@ -36,10 +42,11 @@
             <caption>Table</caption>
             <thead class="table-primary">
             <!-- <th scope="col">#</th> -->
-            <th scope="col">FirstName</th>
-            <th scope="col">SurName</th>
+            <th scope="col">Application ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
             <th scope="col">Student ID</th>
-            <th scope="col">Mail</th>
+            <th scope="col">Email</th>
             <th scope="col">Academic Level</th>
             <th scope="col">Graduated Year</th>
             <th scope="col">GPA</th>
@@ -48,7 +55,28 @@
             <th scope="col">Major</th>
             <th scope="col">Courses</th>
             <th scope="col">Status</th>
+            <th scope="col">GTA Certified</th>
             </thead>
+
+            <% for (Application tempApplication : applications){ %>
+            <tr>
+                <td> <%= tempApplication.getApplicationID() %> </td>
+                <td> <%= tempApplication.getFirstName() %> </td>
+                <td> <%= tempApplication.getLastName() %> </td>
+                <td> <%= tempApplication.getStudentID() %> </td>
+                <td> <%= tempApplication.getEmail() %> </td>
+                <td> <%= tempApplication.getDegreeLevel() %> </>
+                <td> <%=  tempApplication.getGraduateSemester() %> </td>
+                <td> <%=  tempApplication.getGpa() %> </td>
+                <td> <%=  tempApplication.getHoursAtUMKC() %> </td>
+                <td> <%=  tempApplication.getResearchAdvisor() %> </td>
+                <td> <%=  tempApplication.getMajor() %> </td>
+                <td> <%=  tempApplication.getQualifiedCourses() %> </td>
+                <td> <%=  tempApplication.getDomesticInternational() %> </td>
+                <td> <%=  tempApplication.getGtaCertified() %> </td>
+            </tr>
+            <% } %>
+
         </table>
     </div>
 </section>

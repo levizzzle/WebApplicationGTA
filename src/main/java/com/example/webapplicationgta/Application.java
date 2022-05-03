@@ -1,12 +1,15 @@
 package com.example.webapplicationgta;
 
 public class Application {
-    String firstName, lastName, studentID, email, degreeLevel, graduateSemester, gpa, hoursAtUMKC, researchAdvisor,
+    String firstName, lastName, email, degreeLevel, graduateSemester, researchAdvisor,
     major, qualifiedCourses, domesticInternational, gtaCertified;
+    int applicationID, studentID, hoursAtUMKC;
+    float gpa;
 
-    public Application(String firstName, String lastName, String studentID, String email, String degreeLevel,
-                       String graduateSemester, String gpa, String hoursAtUMKC, String researchAdvisor, String major,
+    public Application(int applicationID, String firstName, String lastName, int studentID, String email, String degreeLevel,
+                       String graduateSemester, float gpa, int hoursAtUMKC, String researchAdvisor, String major,
                        String qualifiedCourses, String domesticInternational, String gtaCertified) {
+        this.applicationID = applicationID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.studentID = studentID;
@@ -21,6 +24,10 @@ public class Application {
         this.domesticInternational = domesticInternational;
         this.gtaCertified = gtaCertified;
     }
+
+    public int getApplicationID() { return applicationID; }
+
+    public void setApplicationID(int applicationID) { this.applicationID = applicationID; }
 
     public String getFirstName() {
         return firstName;
@@ -38,11 +45,11 @@ public class Application {
         this.lastName = lastName;
     }
 
-    public String getStudentID() {
+    public int getStudentID() {
         return studentID;
     }
 
-    public void setStudentID(String studentID) {
+    public void setStudentID(int studentID) {
         this.studentID = studentID;
     }
 
@@ -70,19 +77,19 @@ public class Application {
         this.graduateSemester = graduateSemester;
     }
 
-    public String getGpa() {
+    public float getGpa() {
         return gpa;
     }
 
-    public void setGpa(String gpa) {
+    public void setGpa(float gpa) {
         this.gpa = gpa;
     }
 
-    public String getHoursAtUMKC() {
+    public int getHoursAtUMKC() {
         return hoursAtUMKC;
     }
 
-    public void setHoursAtUMKC(String hoursAtUMKC) {
+    public void setHoursAtUMKC(int hoursAtUMKC) {
         this.hoursAtUMKC = hoursAtUMKC;
     }
 
@@ -129,7 +136,8 @@ public class Application {
     @Override
     public String toString() {
         return "Application{" +
-                "firstName='" + firstName + '\'' +
+                "applicationID='" + applicationID + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", studentID='" + studentID + '\'' +
                 ", email='" + email + '\'' +

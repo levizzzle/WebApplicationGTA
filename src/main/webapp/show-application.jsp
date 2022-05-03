@@ -9,7 +9,8 @@
 </head>
 
 <%
-    List<String> gtaApplication = (List<String>) request.getAttribute("APPLICATION");
+    String[] gtaApplication = (String[]) request.getAttribute("APPLICATION");
+
 %>
 
 <body>

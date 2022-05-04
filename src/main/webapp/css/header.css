@@ -8,10 +8,10 @@
 
 #headpart img {
     width: clamp(100px, 10vw, 140px);
-    height: auto;
+    height: 75px;
     padding-bottom: 15px;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 8px !important;
 }
 
 #headpart .title {
@@ -22,8 +22,27 @@
     font-weight: 600;
 }
 
-#headpart .holder {
+#headpart form {
     display: grid;
     align-items: center;
     justify-items: right;
+}
+
+#logOutBtn  {
+    background: rgb(255, 213, 47, 1);
+    text-transform: uppercase;
+    outline: 0;
+    border: 0;
+    font-size: 14px;
+    transition: .5s ease-in-out;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100px;
+}
+
+#logOutBtn:hover {
+    background: rgb(253, 183, 26, 1);
+    color: #42526e;
+    font-weight: bold;
 }

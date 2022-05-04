@@ -2,11 +2,12 @@
 <%@ page import="com.example.webapplicationgta.Application" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <jsp:include page="header.jsp"></jsp:include>
+<%--    <jsp:include page="header.jsp"></jsp:include>--%>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,9 +20,23 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="js/sorttable.js"></script>
 </head>
 
 <body>
+<section id="headpart">
+
+    <a href="https://www.umkc.edu/"><img src="${pageContext.request.contextPath}/images/UMKC_white_cropped.png" alt=""></a>
+    <div class="title">GTA Application Portal</div>
+
+    <div class="holder">
+        <form id="logout" name="logout" class="logout-form"  action="${pageContext.request.contextPath}/Logout" method="GET">
+            <button type="submit" id="logOutBtn">Log Out</button>
+        </form>
+    </div>
+
+</section>
+
 
 <!-- New addition for 4 buttons -->
 <section id="subheadpart">
@@ -38,9 +53,10 @@
 
 <section id="bodypart">
     <div class="table-responsive-lg">
-        <table class="table table-bordered caption-top" id="myTable">
-            <caption>Table</caption>
-            <thead class="table-primary">
+        <table class="table table-bordered caption-top sortable" id="myTable">
+            <caption>Student Applications</caption>
+<%--            <thead class="table-primary">--%>
+            <thead>
             <!-- <th scope="col">#</th> -->
             <th scope="col">Application ID</th>
             <th scope="col">First Name</th>
@@ -76,8 +92,23 @@
                 <td> <%=  tempApplication.getGtaCertified() %> </td>
             </tr>
             <% } %>
-
         </table>
+
+<%--        <section id="sorting">--%>
+<%--            <form action="/ApplicationsServlet">--%>
+<%--                <input type="hidden" name="command" value="sort"/>--%>
+<%--                sort by:--%>
+<%--                <select name="sort" id="sort">--%>
+<%--                    <option value="studentApplicationID">Application ID</option>--%>
+<%--                    <option value="cumulativeGPA">GPA</option>--%>
+<%--                    <option value="studentHours">Hours at UMKC</option>--%>
+<%--                    <option value="studentGTACert">GTA Certified</option>--%>
+<%--                </select>--%>
+<%--                <button type="submit" name="sortBtn" class="btn" onclick()="/ApplicationsServlet">SORT</button>--%>
+<%--            </form>--%>
+<%--        </section>--%>
+
+
     </div>
 </section>
 <script src=".js files/logout.js"></script>

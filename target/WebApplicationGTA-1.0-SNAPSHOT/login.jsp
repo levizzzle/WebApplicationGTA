@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMKC | GTA Application Portal</title>
-    <link rel="stylesheet" type="text/css" href="css/login-style.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 
     <!-- Bootstrap CSS -->
 <%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"--%>
@@ -20,12 +20,18 @@
 
 <body>
 <section id="headpart">
-    <a href="https://www.umkc.edu/"><img src="images/UMKC_white_cropped.png" alt=""></a>
+
+    <a href="https://www.umkc.edu/"><img src="${pageContext.request.contextPath}/images/UMKC_white_cropped.png" alt=""></a>
     <div class="title">GTA Application Portal</div>
+
     <div class="holder">
-        <button type="reset" id="logOutBtn" onclick="logOut()">Log Out</button>
+        <form id="logout" name="logout" class="logout-form"  action="${pageContext.request.contextPath}/Logout" method="GET">
+            <button type="submit" id="logOutBtn">Log Out</button>
+        </form>
     </div>
+
 </section>
+
 <section id="bodypart">
     <div class="container-sm">
         <!-- <h1>LOGIN</h1> -->
@@ -36,7 +42,7 @@
             <div class="formField">
                 <input type="password" name="password" placeholder="Password" id="password" required>
             </div>
-            <button type="submit" class="submitbtn" onclick="getInput()">Log in</button>
+            <button type="submit" class="submitbtn" >Log in</button>
             <p class="message">Forgot password? <a href="https://www.umkc.edu/is/password/">Click here!</a>
         </form>
     </div>

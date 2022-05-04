@@ -80,7 +80,12 @@
                 </div>
                 <div class="formField">
                     <span class="detail">Level(BS/MS/PHD):</span>
-                    <input type="text" id="level" name="gtaForm" placeholder="BS/MS/PHD">
+<%--                    <input type="text" id="level" name="gtaForm" placeholder="BS/MS/PHD">--%>
+                    <select id="level" name="gtaForm">
+                        <option value="BS">BS</option>
+                        <option value="MS">MS</option>
+                        <option value="PHD">PHD</option>
+                    </select>
                 </div>
                 <div class="formField">
                     <span class="detail">Graduating Semester:</span>
@@ -101,7 +106,13 @@
                 </div>
                 <div class="formField">
                     <span class="detail">Major (CS/IT/ECE/EE):</span>
-                    <input type="text" id="major" name="gtaForm" placeholder="Major">
+<%--                    <input type="text" id="major" name="gtaForm" placeholder="Major">--%>
+                    <select id="major" name="gtaForm">
+                        <option value="CS">CS</option>
+                        <option value="IT">IT</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EE">EE</option>
+                    </select>
                 </div>
                 <div class="formField">
                         <span class="detail">Courses you could teach or grade for (ex. CS 201L/CS 5540/ECE 216,
@@ -112,38 +123,26 @@
                         <span class="detail">Status-International or Domestic (If you are on an F-1 visa you are
                             international.
                             If you are a citizen or permanent resident, you are domestic):</span>
-                    <input type="text" id="status" name="gtaForm" placeholder="Status">
+<%--                    <input type="text" id="status" name="gtaForm" placeholder="Status">--%>
+                    <select id="status" name="gtaForm">
+                        <option value="Domestic">Domestic</option>
+                        <option value="International">International</option>
+                    </select>
                 </div>
                 <div class="formField">
                         <span class="detail">(International Students ONLY) Are you GTA Certified? If so, which term did
                             you complete your certification?:</span>
-                    <input type="text" id="certificate" name="gtaForm" placeholder="Certificate">
+<%--                    <input type="text" id="certificate" name="gtaForm" placeholder="Certificate">--%>
+                    <select id="certificate" name="gtaForm">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
                 </div>
             </div>
             <button type="submit" class="submitBtn" id="submittBtn" onclick="getInput()">Submit</button>
         </form>
     </div>
 
-    <!-- <div class="table-responsive-lg">
-        <table class="table table-bordered caption-top" id="myTable">
-            <caption>Table</caption>
-            <thead class="table-primary">
-                <th scope="col">#</th>
-                <th scope="col">FirstName</th>
-                <th scope="col">SurName</th>
-                <th scope="col">Student ID</th>
-                <th scope="col">Mail</th>
-                <th scope="col">Academic Level</th>
-                <th scope="col">Graduated Year</th>
-                <th scope="col">GPA</th>
-                <th scope="col">Hours</th>
-                <th scope="col">Advisor</th>
-                <th scope="col">Major</th>
-                <th scope="col">Courses</th>
-                <th scope="col">Status</th>
-            </thead>
-        </table>
-    </div> -->
 </div>
 <script src=".js files/getData.js"></script>
 

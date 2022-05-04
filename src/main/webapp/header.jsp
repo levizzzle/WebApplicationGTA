@@ -8,6 +8,9 @@
     <div class="title">GTA Application Portal</div>
 
     <div class="holder">
-        <button type="reset" id="logOutBtn" onclick="logOut()">Log Out</button>
+    <form id="logout" name="logout" class="logout-form"  action="${pageContext.request.contextPath}/Logout" method="GET">
+            <button type="submit" id="logOutBtn">Log Out</button>
+    </form>
     </div>
+
 </section>

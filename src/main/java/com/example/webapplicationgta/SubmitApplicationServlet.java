@@ -79,7 +79,7 @@ public class SubmitApplicationServlet extends HttpServlet {
             stmt.execute();
 
             // send to JSP page
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/show-application.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/student.jsp");
             dispatcher.forward(request, response);
         }
         finally{
@@ -91,9 +91,7 @@ public class SubmitApplicationServlet extends HttpServlet {
 
         try {
             if (myRs != null) {myRs.close();}
-
             if (myStmt != null) {myStmt.close();}
-
             if (myConn != null) {myConn.close();}
         }
         catch (Exception exc) {

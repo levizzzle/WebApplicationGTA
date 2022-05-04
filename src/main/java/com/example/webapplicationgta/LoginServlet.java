@@ -15,7 +15,7 @@ public class LoginServlet extends HttpServlet {
 
     private UserDBUtil userDBUtil;
 
-    @Resource(name = "jdbc/web_User_tracker")
+    @Resource(name = "jdbc/db")
     private DataSource dataSource;
 
     @Override

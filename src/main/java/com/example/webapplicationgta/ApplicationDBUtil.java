@@ -10,10 +10,18 @@ import java.util.List;
 public class ApplicationDBUtil {
 
     private static DataSource dataSource;
+    String sort = null;
 
     public ApplicationDBUtil(DataSource theDataSource){
         dataSource = theDataSource;
     }
+
+    public List<Application> sortApplications(String sort) throws Exception {
+        this.sort = sort;
+
+        return getApplications();
+    }
+
     public List<Application> getApplications() throws Exception {
 
         List<Application> applications = new ArrayList<>();
@@ -23,12 +31,12 @@ public class ApplicationDBUtil {
         ResultSet rs = null;
 
         try {
+            if (sort == null){ sort = "studentApplicationID"; }
             // get a connection
-//            conn = dataSource.getConnection();
             conn = DatabaseConnection.initializeDatabase();
 
             // create sql statement
-            String sql = "select * from student_submission order by studentApplicationID DESC";
+            String sql = "select * from student_submission order by " + sort + " DESC";
             stmt = conn.createStatement();
 
             // execute query

@@ -17,6 +17,7 @@ public class ApplicationsServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     private ApplicationDBUtil applicationDBUtil;
+    String command, sort = null;
 
     @Resource(name = "jdbc/db")
     private DataSource dataSource;
@@ -36,7 +37,15 @@ public class ApplicationsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            getApplications(request, response);
+            command = request.getParameter("command");
+            sort = request.getParameter("sort");
+
+            if (command == null){
+                getApplications(request, response);
+            }
+            else if (command.equals("sort")) {
+                sortApplications(request, response, sort);
+            }
         } catch (Exception e) {
             throw new ServletException(e);
         }
@@ -47,6 +56,20 @@ public class ApplicationsServlet extends HttpServlet {
 
         // get applications from db util
         List<Application> applications = applicationDBUtil.getApplications();
+
+        // add applications to the request
+        request.setAttribute("APPLICATION_LIST", applications);
+
+        // send to JSP page
+        RequestDispatcher dispatcher = request.getRequestDispatcher(page);
+        dispatcher.forward(request, response);
+    }
+
+    private void sortApplications(HttpServletRequest request, HttpServletResponse response, String sort) throws Exception {
+        String page = "/admin.jsp";
+
+        // get applications from db util
+        List<Application> applications = applicationDBUtil.sortApplications(sort);
 
         // add applications to the request
         request.setAttribute("APPLICATION_LIST", applications);

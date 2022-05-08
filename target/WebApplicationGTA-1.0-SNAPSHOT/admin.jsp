@@ -25,7 +25,6 @@
 
 <body>
 <section id="headpart">
-
     <a href="https://www.umkc.edu/"><img src="${pageContext.request.contextPath}/images/UMKC_white_cropped.png" alt=""></a>
     <div class="title">GTA Application Portal</div>
 
@@ -34,9 +33,7 @@
             <button type="submit" id="logOutBtn">Log Out</button>
         </form>
     </div>
-
 </section>
-
 
 <!-- New addition for 4 buttons -->
 <section id="subheadpart">
@@ -57,21 +54,21 @@
             <caption>Student Applications</caption>
 <%--            <thead class="table-primary">--%>
             <thead>
-            <!-- <th scope="col">#</th> -->
-            <th scope="col">Application ID</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Student ID</th>
-            <th scope="col">Email</th>
-            <th scope="col">Academic Level</th>
-            <th scope="col">Graduated Year</th>
-            <th scope="col">GPA</th>
-            <th scope="col">Hours</th>
-            <th scope="col">Advisor</th>
-            <th scope="col">Major</th>
-            <th scope="col">Courses</th>
-            <th scope="col">Status</th>
-            <th scope="col">GTA Certified</th>
+                <!-- <th scope="col">#</th> -->
+                <th scope="col">Application ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Student ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Academic Level</th>
+                <th scope="col">Graduated Year</th>
+                <th scope="col">GPA</th>
+                <th scope="col">Hours</th>
+                <th scope="col">Advisor</th>
+                <th scope="col">Major</th>
+                <th scope="col">Courses</th>
+                <th scope="col">Status</th>
+                <th scope="col">GTA Certified</th>
             </thead>
 
             <% for (Application tempApplication : applications){ %>
@@ -111,8 +108,6 @@
 
     </div>
 </section>
-<script src=".js files/logout.js"></script>
-<script src=".js files/getData.js"></script>
 
 <!---JavaScript Bootstrap--->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

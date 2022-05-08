@@ -4,7 +4,6 @@
 
 <head>
     <link rel="preload" href="${pageContext.request.contextPath}/images/UMKC_white_cropped.png" as="image">
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,41 +11,59 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
 
     <!-- Bootstrap CSS -->
-<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"--%>
-<%--          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">--%>
-<%--    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"--%>
-<%--          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">--%>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
 <section id="headpart">
-
     <a href="https://www.umkc.edu/"><img src="${pageContext.request.contextPath}/images/UMKC_white_cropped.png" alt=""></a>
     <div class="title">GTA Application Portal</div>
 
     <div class="holder">
         <form id="logout" name="logout" class="logout-form"  action="${pageContext.request.contextPath}/Logout" method="GET">
-            <button type="submit" id="logOutBtn">Log Out</button>
+            <button type="submit" id="logOutBtn">0.0 0.0</button>
         </form>
     </div>
-
 </section>
 
 <section id="bodypart">
     <div class="container-sm">
         <!-- <h1>LOGIN</h1> -->
-                <form id="login" name="theform" class="login-form" action="LoginServlet" method="GET">
+        <form id="login" name="theform" class="login-form" action="LoginServlet" method="GET">
             <div class="formField">
-                <input type="text" name="username" placeholder="Username" id="username" required>
+                <input type="text" name="username" placeholder="Username" id="username"
+                       title="Enter your UMKC mail" required>
             </div>
             <div class="formField">
-                <input type="password" name="password" placeholder="Password" id="password" required>
+                <%-- Check password by pattern; password has to have at least: 1 digit, 1 lowercase character, 1 UPPERCASE character, 8 characters --%>
+                <input type="password" name="password" placeholder="Password" id="password" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                       title="Password has to have at least: 1 digit, 1 lowercase character, 1 UPPERCASE character, 8 characters" required>
             </div>
             <button type="submit" class="submitbtn" >Log in</button>
             <p class="message">Forgot password? <a href="https://www.umkc.edu/is/password/">Click here!</a>
         </form>
     </div>
 </section>
+<%--<script>--%>
+<%--    window.addEventListener("load", function() {--%>
+
+<%--        let form = document.querySelector("form");--%>
+<%--        form.addEventListener("submit", function (event) {--%>
+<%--            let username = document.querySelector('input[name=username]');--%>
+<%--            let password = document.querySelector('input[name=password]');--%>
+<%--            if ((username.value === "") || (password.value === "")) {--%>
+<%--                alert("Please fill all the information");--%>
+<%--                event.preventDefault();--%>
+<%--            }else if (username.value.includes("@umsystem.edu")===false) {--%>
+<%--                alert("Please use the valid UMKC mail.")--%>
+<%--                event.preventDefault();--%>
+<%--            }--%>
+<%--        });--%>
+<%--    });--%>
+<%--</script>--%>
 
 <!---JavaScript Bootstrap--->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

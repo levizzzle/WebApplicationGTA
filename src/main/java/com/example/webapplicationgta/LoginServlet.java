@@ -44,6 +44,15 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+//        // check username
+//        if (username.isEmpty()) {
+//            System.out.println("Don't leave it empty");
+//            page = "";
+//        } else if (!(username.contains(".umsystem.edu"))) {
+//            System.out.println("Please enter a vaid UMKC mail.");
+//            page = "/warning.jsp";
+//        }
+
         // get Users from db util
         List<User> users = userDBUtil.getUsers();
 
@@ -51,9 +60,16 @@ public class LoginServlet extends HttpServlet {
         request.setAttribute("USER_LIST", users);
 
         for (User user: users){
+            // check with database
             if (user.getUsername().equals(username) && user.getPassword().equals(password)){
                 page = (user.getIsAdmin() ? "/ApplicationsServlet" : "/student.jsp");
                 break;
+            }
+            // check username, have to contain @umsystem.edu
+            else if (!(username.contains("@umsystem.edu"))) {
+                System.out.println("Please enter a vaid UMKC mail.");
+                page = "/login.jsp";
+//                page = "/warning.jsp";
             }
             else {
                 page = "/login-failed.jsp";

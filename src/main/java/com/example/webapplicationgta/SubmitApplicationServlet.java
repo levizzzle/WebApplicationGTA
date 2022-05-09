@@ -16,6 +16,7 @@ public class SubmitApplicationServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     private UserDBUtil userDBUtil;
+    private int appID;
 
     @Resource(name = "jdbc/student_submission")
     private DataSource dataSource;
@@ -35,6 +36,8 @@ public class SubmitApplicationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+            getAppID(request, response);
+            addToAppStatus(request, response);
             storeApplication(request, response);
         } catch (Exception e) {
             throw new ServletException(e);
@@ -43,7 +46,6 @@ public class SubmitApplicationServlet extends HttpServlet {
 
     private void storeApplication(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String[] params = request.getParameterValues("gtaForm");
-        int appID = 0;
 
         List<String> values = Arrays.asList(request.getParameterValues("gtaForm"));
         request.setAttribute("APPLICATION", params);
@@ -51,7 +53,6 @@ public class SubmitApplicationServlet extends HttpServlet {
         Connection conn = null;
         PreparedStatement stmt = null;
 
-        String end = "')";
         try {
             // get a connection
             conn = DatabaseConnection.initializeDatabase();
@@ -87,6 +88,27 @@ public class SubmitApplicationServlet extends HttpServlet {
         }
     }
 
+    private void getAppID(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DatabaseConnection.initializeDatabase();
+            String sql = "select studentApplicationID from student_submission " +
+                    "order by studentApplicationID DESC LIMIT 1";
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+
+            while(rs.next()){
+                appID = rs.getInt("studentApplicationID")+1;
+            }
+
+        } finally {
+            close(conn, stmt, null);
+        }
+    }
+
     private void close(Connection myConn, Statement myStmt, ResultSet myRs) {
 
         try {
@@ -96,6 +118,31 @@ public class SubmitApplicationServlet extends HttpServlet {
         }
         catch (Exception exc) {
             exc.printStackTrace();
+        }
+    }
+
+    private void addToAppStatus(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+        conn = DatabaseConnection.initializeDatabase();
+        String sql = "INSERT INTO student_application_status " +
+                    "(studentApplicationID, appPending, appBookmarked, appDenied, appApproved) " +
+                    "VALUES (?, ?, ?, ?, ?)";
+        stmt = conn.prepareStatement(sql);
+
+        stmt.setInt(1,appID);
+        stmt.setInt(2,1);
+        stmt.setInt(3,0);
+        stmt.setInt(4,0);
+        stmt.setInt(5,0);
+
+        // execute insert statement
+        stmt.execute();
+        }
+        finally{
+            close(conn, stmt, null);
         }
     }
 }

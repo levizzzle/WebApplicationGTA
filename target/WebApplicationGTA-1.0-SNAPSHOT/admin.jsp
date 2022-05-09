@@ -36,12 +36,17 @@
 </section>
 
 <!-- New addition for 4 buttons -->
-<section id="subheadpart">
-    <button type="button" id="aBtn">Pending Applications</button>
-    <button type="button" id="aBtn1">Bookmarked Apps</button>
-    <button type="button" id="aBtn2">Recently Denied</button>
-    <button type="button" id="aBtn3">Recently Accepted</button>
-</section>
+<form id="filter" name="filters" class="filter-buttons" action="ApplicationsServlet" method="GET">
+    <section id="subheadpart">
+        <button type="submit" name="command" id="Btn1" value="all">All Applications</button>
+        <button type="submit" name="command" id="Btn2" value="pending">Pending</button>
+        <button type="submit" name="command" id="Btn3" value="bookmarked">Bookmarked</button>
+        <button type="submit" name="command" id="Btn4" value="denied">Denied</button>
+        <button type="submit" name="command" id="Btn5" value="approved">Approved</button>
+    </section>
+</form>
+
+
 <!-- ------------ -->
 
 <%
@@ -91,19 +96,23 @@
             <% } %>
         </table>
 
-<%--        <section id="sorting">--%>
-<%--            <form action="/ApplicationsServlet">--%>
-<%--                <input type="hidden" name="command" value="sort"/>--%>
-<%--                sort by:--%>
-<%--                <select name="sort" id="sort">--%>
-<%--                    <option value="studentApplicationID">Application ID</option>--%>
-<%--                    <option value="cumulativeGPA">GPA</option>--%>
-<%--                    <option value="studentHours">Hours at UMKC</option>--%>
-<%--                    <option value="studentGTACert">GTA Certified</option>--%>
-<%--                </select>--%>
-<%--                <button type="submit" name="sortBtn" class="btn" onclick()="/ApplicationsServlet">SORT</button>--%>
-<%--            </form>--%>
-<%--        </section>--%>
+            <section id="adminapply">
+                <div class="info-text">**NOTE**  Click on any column to sort</div>
+                    <form action="AdminServlet">
+                        <input type="hidden" name="command" value="all">
+                        <div class="info-text">Select Application ID</div>
+                        <select name="appID" id="appID">
+                            <% for (Application tempApplication : applications){ %>
+                            <option value="<%= tempApplication.getApplicationID() %>"><%= tempApplication.getApplicationID() %></option>
+                            <% } %>
+                        </select>
+                        <button type="submit" name="apply" id="adminBtn" value="appBookmarked">Bookmark</button>
+                        <button type="submit" name="apply" id="adminBtn" value="appDenied">Deny</button>
+                        <button type="submit" name="apply" id="adminBtn" value="appApproved">Approve</button>
+                    </form>
+
+            </section>
+
 
 
     </div>

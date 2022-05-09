@@ -1,20 +1,3 @@
-/*
-  SortTable
-  version 2
-  7th April 2007
-  Stuart Langridge, http://www.kryogenix.org/code/browser/sorttable/
-
-  Instructions:
-  Download this file
-  Add <script src="sorttable.js"></script> to your HTML
-  Add class="sortable" to any table you'd like to make sortable
-  Click on the headers to sort
-
-  Thanks to many, many people for contributions and suggestions.
-  Licenced as X11: http://www.kryogenix.org/code/browser/licence.html
-  This basically means: do what you want with it.
-*/
-
 
 var stIsIE = /*@cc_on!@*/false;
 
@@ -52,10 +35,6 @@ sorttable = {
 
         if (table.tHead.rows.length != 1) return; // can't cope with two header rows
 
-        // Sorttable v1 put rows with a class of "sortbottom" at the bottom (as
-        // "total" rows, for example). This is B&R, since what you're supposed
-        // to do is put them in a tfoot. So, if there are sortbottom rows,
-        // for backwards compatibility, move them to tfoot (creating it if needed).
         sortbottomrows = [];
         for (var i=0; i<table.rows.length; i++) {
             if (table.rows[i].className.search(/\bsortbottom\b/) != -1) {
@@ -137,19 +116,14 @@ sorttable = {
                     sortfwdind.innerHTML = stIsIE ? '&nbsp<font face="webdings">6</font>' : '&nbsp;&#x25BE;';
                     this.appendChild(sortfwdind);
 
-                    // build an array to sort. This is a Schwartzian transform thing,
-                    // i.e., we "decorate" each row with the actual sort key,
-                    // sort based on the sort keys, and then put the rows back in order
-                    // which is a lot faster because you only do getInnerText once per row
+
                     row_array = [];
                     col = this.sorttable_columnindex;
                     rows = this.sorttable_tbody.rows;
                     for (var j=0; j<rows.length; j++) {
                         row_array[row_array.length] = [sorttable.getInnerText(rows[j].cells[col]), rows[j]];
                     }
-                    /* If you want a stable sort, uncomment the following line */
-                    //sorttable.shaker_sort(row_array, this.sorttable_sortfunction);
-                    /* and comment out this one */
+
                     row_array.sort(this.sorttable_sortfunction);
 
                     tb = this.sorttable_tbody;
@@ -172,9 +146,7 @@ sorttable = {
                 if (text.match(/^-?[Ł$¤]?[\d,.]+%?$/)) {
                     return sorttable.sort_numeric;
                 }
-                // check for a date: dd/mm/yyyy or dd/mm/yy
-                // can have / or . or - as separator
-                // can be mm/dd as well
+
                 possdate = text.match(sorttable.DATE_RE)
                 if (possdate) {
                     // looks like a date
@@ -186,8 +158,7 @@ sorttable = {
                     } else if (second > 12) {
                         return sorttable.sort_mmdd;
                     } else {
-                        // looks like a date, but we can't tell which, so assume
-                        // that it's dd/mm (English imperialism!) and keep looking
+
                         sortfn = sorttable.sort_ddmm;
                     }
                 }
@@ -197,12 +168,6 @@ sorttable = {
     },
 
     getInnerText: function(node) {
-        // gets the text we want to use for sorting for a cell.
-        // strips leading and trailing whitespace.
-        // this is *not* a generic getInnerText function; it's special to sorttable.
-        // for example, you can override the cell text with a customkey attribute.
-        // it also gets .value for <input> fields.
-
         if (!node) return "";
 
         hasInputs = (typeof node.getElementsByTagName == 'function') &&
@@ -333,28 +298,10 @@ sorttable = {
     }
 }
 
-/* ******************************************************************
-   Supporting functions: bundled here to avoid depending on a library
-   ****************************************************************** */
-
-// Dean Edwards/Matthias Miller/John Resig
-
 /* for Mozilla/Opera9 */
 if (document.addEventListener) {
     document.addEventListener("DOMContentLoaded", sorttable.init, false);
 }
-
-/* for Internet Explorer */
-/*@cc_on @*/
-/*@if (@_win32)
-    document.write("<script id=__ie_onload defer src=javascript:void(0)><\/script>");
-    var script = document.getElementById("__ie_onload");
-    script.onreadystatechange = function() {
-        if (this.readyState == "complete") {
-            sorttable.init(); // call the onload handler
-        }
-    };
-/*@end @*/
 
 /* for Safari */
 if (/WebKit/i.test(navigator.userAgent)) { // sniff
@@ -367,9 +314,6 @@ if (/WebKit/i.test(navigator.userAgent)) { // sniff
 
 /* for other browsers */
 window.onload = sorttable.init;
-
-// written by Dean Edwards, 2005
-// with input from Tino Zijdel, Matthias Miller, Diego Perini
 
 // http://dean.edwards.name/weblog/2005/10/add-event/
 
@@ -438,13 +382,6 @@ fixEvent.preventDefault = function() {
 fixEvent.stopPropagation = function() {
     this.cancelBubble = true;
 }
-
-// Dean's forEach: http://dean.edwards.name/base/forEach.js
-/*
-	forEach, version 1.0
-	Copyright 2006, Dean Edwards
-	License: http://www.opensource.org/licenses/mit-license.php
-*/
 
 // array-like enumeration
 if (!Array.forEach) { // mozilla already supports this

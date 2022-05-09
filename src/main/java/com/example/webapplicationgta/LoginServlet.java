@@ -44,14 +44,6 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-//        // check username
-//        if (username.isEmpty()) {
-//            System.out.println("Don't leave it empty");
-//            page = "";
-//        } else if (!(username.contains(".umsystem.edu"))) {
-//            System.out.println("Please enter a vaid UMKC mail.");
-//            page = "/warning.jsp";
-//        }
 
         // get Users from db util
         List<User> users = userDBUtil.getUsers();

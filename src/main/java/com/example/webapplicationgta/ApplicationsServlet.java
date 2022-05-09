@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ApplicationsServlet", value = "/ApplicationsServlet")
@@ -40,11 +41,11 @@ public class ApplicationsServlet extends HttpServlet {
             command = request.getParameter("command");
             sort = request.getParameter("sort");
 
-            if (command == null){
+            if (command == null || command.equals("all")) {
                 getApplications(request, response);
             }
-            else if (command.equals("sort")) {
-                sortApplications(request, response, sort);
+            else{
+                getApplications(request, response, command);
             }
         } catch (Exception e) {
             throw new ServletException(e);
@@ -55,7 +56,7 @@ public class ApplicationsServlet extends HttpServlet {
         String page = "/admin.jsp";
 
         // get applications from db util
-        List<Application> applications = applicationDBUtil.getApplications();
+        List<Application> applications = applicationDBUtil.getApplications(null);
 
         // add applications to the request
         request.setAttribute("APPLICATION_LIST", applications);
@@ -65,11 +66,12 @@ public class ApplicationsServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    private void sortApplications(HttpServletRequest request, HttpServletResponse response, String sort) throws Exception {
+    private void getApplications(HttpServletRequest request, HttpServletResponse response, String command) throws Exception {
         String page = "/admin.jsp";
 
         // get applications from db util
-        List<Application> applications = applicationDBUtil.sortApplications(sort);
+        List<Application> temp = new ArrayList<Application>();
+        List<Application> applications = applicationDBUtil.getApplications(command);
 
         // add applications to the request
         request.setAttribute("APPLICATION_LIST", applications);

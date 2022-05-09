@@ -1,13 +1,14 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <link rel="preload" href="${pageContext.request.contextPath}/images/UMKC_white_cropped.png" as="image">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMKC | GTA Application Portal</title>
-    <link rel="stylesheet" type="text/css" href="css/style-admin.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,17 +19,21 @@
 
 <body>
 <section id="headpart">
-    <a href="https://www.umkc.edu/"><img src="${pageContext.request.contextPath}/images/UMKC_White.png" alt=""></a>
+    <a href="https://www.umkc.edu/"><img src="${pageContext.request.contextPath}/images/UMKC_white_cropped.png" alt=""></a>
     <div class="title">GTA Application Portal</div>
+
     <div class="holder">
-        <button type="reset" id="logOutBtn" onclick="logOut()">Log Out</button>
+        <form id="logout" name="logout" class="logout-form"  action="${pageContext.request.contextPath}/Logout" method="GET">
+            <button type="submit" id="logOutBtn">0.0 0.0</button>
+        </form>
     </div>
 </section>
 
-<br>
-<h1>Login Failed</h1>
-
-
+<section id="bodypart">
+    <div class="container-sm">
+        <!-- <h1>LOGIN</h1> -->
+    </div>
+</section>
 
 
 <!---JavaScript Bootstrap--->
@@ -41,3 +46,4 @@
 </body>
 
 </html>
+

@@ -1,9 +1,7 @@
 package com.example.webapplicationgta;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,27 +14,26 @@ public class ApplicationDBUtil {
         dataSource = theDataSource;
     }
 
-    public List<Application> sortApplications(String sort) throws Exception {
-        this.sort = sort;
-
-        return getApplications();
-    }
-
-    public List<Application> getApplications() throws Exception {
+    public List<Application> getApplications(String filter) throws Exception {
 
         List<Application> applications = new ArrayList<>();
 
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
+        String sql;
 
         try {
-            if (sort == null){ sort = "studentApplicationID"; }
             // get a connection
             conn = DatabaseConnection.initializeDatabase();
 
             // create sql statement
-            String sql = "select * from student_submission order by " + sort + " DESC";
+            if (filter == null || filter.equals("all")){
+                sql = "select * from student_submission order by " + sort + " DESC";
+            }
+            else {
+                sql = getFilter(filter);
+            }
             stmt = conn.createStatement();
 
             // execute query
@@ -76,8 +73,60 @@ public class ApplicationDBUtil {
         return applications;
     }
 
+    public void updateApplication(int appID, String command) throws SQLException, ClassNotFoundException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String sql, choice;
+
+        try {
+            conn = DatabaseConnection.initializeDatabase();
+            sql = "UPDATE student_application_status SET appPending = 0, "+ command +" = 1 WHERE (studentApplicationID = ?);";
+            stmt = conn.prepareStatement(sql);
+
+            stmt.setInt(1,appID);
+            stmt.execute();
+
+        } finally {
+            close(conn, stmt, rs);
+        }
+    }
+
+    private String getFilter(String filter){
+        String where = null;
+        switch (filter) {
+            case "pending":
+                where = "appPending";
+                break;
+            case "bookmarked":
+                where = "appBookmarked";
+                break;
+            case "denied":
+                where = "appDenied";
+                break;
+            case "approved":
+                where = "appApproved";
+                break;
+        }
+        return "SELECT * FROM student_submission " +
+                    "INNER JOIN student_application_status " +
+                    "ON student_submission.studentApplicationID=student_application_status.studentApplicationID " +
+                    "WHERE student_application_status."+ where +"=1;";
+    }
+
     // close connection, statement, and result set
     private void close(Connection conn, Statement stmt, ResultSet rs){
+        try{
+            if(rs != null){rs.close();}
+            if(stmt != null){stmt.close();}
+            if(conn != null){conn.close();}
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
+    private void close(Connection conn, PreparedStatement stmt, ResultSet rs){
         try{
             if(rs != null){rs.close();}
             if(stmt != null){stmt.close();}

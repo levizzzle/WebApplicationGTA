@@ -174,7 +174,7 @@ body::-webkit-scrollbar {
 
 /* GTA page CSS */
 #GTAform-page {
-    height: 100vh;
+    height: 93vh;
     background-color: rgba(44, 41, 42, 0.98);
     display: flex;
     align-items: center;
@@ -187,7 +187,7 @@ body::-webkit-scrollbar {
 }
 
 .container {
-    width: 100%;
+    width: 90%;
     padding: 4% 20px;
     color: black;
     overflow-y: auto;
@@ -201,8 +201,8 @@ body::-webkit-scrollbar {
 }
 
 .container .title {
-    margin-bottom: clamp(10px, 2vw, 30px);
-    font-size: clamp(35px, 3vw, 60px);
+    margin-bottom: clamp(0px, 2vw, 0px);
+    font-size: clamp(10px, 2vw, 40px);
     font-weight: bold;
     letter-spacing: 1.5px;
     text-align: center;
@@ -225,9 +225,9 @@ body::-webkit-scrollbar {
 }
 
 .formField {
-    padding: 10px 20px;
-    margin-bottom: clamp(5px, 1vw, 10px);
-    font-size: clamp(16px, 2vw, 20px);
+    padding: 10px 10px;
+    margin-bottom: clamp(5px, 1vw, 5px);
+    font-size: clamp(16px, 2vw, 18px);
     font-weight: bold;
 }
 
@@ -291,6 +291,6 @@ body::-webkit-scrollbar {
     }
 
     .submitBtn {
-        margin: 20px 0 0 10%;
+        margin: 10px 0 0 10%;
     }
 }

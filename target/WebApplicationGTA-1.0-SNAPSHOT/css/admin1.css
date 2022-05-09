@@ -19,6 +19,11 @@ body {
     background-size: cover;
 }
 
+.info-text {
+    color: #FFFFFF !important;
+}
+
+
 /* Head part */
 #headpart {
     width: 100%;
@@ -72,15 +77,43 @@ body {
     font-weight: bold;
 }
 
+#adminBtn {
+    background: rgb(255, 213, 47, 1);
+    text-transform: uppercase;
+    outline: 0;
+    border: 0;
+    font-size: clamp(12px, 10vw, 14px);
+    transition: .5s ease-in-out;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: clamp(100px, 10vw, 0px);
+    margin-right: clamp(0px, 2vw, 0px);
+    height: 30px;
+}
+
+#adminBtn:hover {
+    background: rgb(253, 183, 26, 1);
+    color: #42526e;
+    font-weight: bold;
+}
+
 .holder {
     display: grid;
     align-items: center;
 }
 
+#adminapply {
+    width: 1000px;
+    height: 16%;
+    display: grid;
+    grid-auto-flow: column;
+}
+
 /* Subhead part */
 #subheadpart {
     width: 100%;
-    height: 4%;
+    height: 16%;
     display: grid;
     grid-auto-flow: column;
 }
@@ -90,7 +123,7 @@ body {
     background-color: #04487F;
     color: white;
     font-weight: 600;
-    font-size: clamp(12px, 8vw, 16px);
+    font-size: clamp(12px, 8vw, 20px);
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: all 350ms;
 }
@@ -142,6 +175,5 @@ table.sortable thead {
     cursor: pointer;
     text-align: center;
 }
-
 
 

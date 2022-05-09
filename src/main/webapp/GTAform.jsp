@@ -21,40 +21,6 @@
 </head>
 
 <body>
-<!--header for navigation bar-->
-<%--<nav class="navbar navbar-light bg-light">--%>
-<%--    <div class="container-fluid justify-content-between">--%>
-<%--        <a href="https://www.umkc.edu/"><img src="images\UMKC_white_cropped.png" alt=""></a>--%>
-<%--        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"--%>
-<%--                aria-controls="offcanvasNavbar">--%>
-<%--            <span class="navbar-toggler-icon"></span>--%>
-<%--        </button>--%>
-<%--        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"--%>
-<%--             aria-labelledby="offcanvasNavbarLabel">--%>
-<%--            <div class="offcanvas-header">--%>
-<%--                <h2 class="offcanvas-title" id="offcanvasNavbarLabel">UMKC</h2>--%>
-<%--                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"--%>
-<%--                        aria-label="Close"></button>--%>
-<%--            </div>--%>
-<%--            <div class="offcanvas-body">--%>
-<%--                <ul class="navbar-nav justify-content-end flex-grow-1">--%>
-<%--                    <li class="nav-item">--%>
-<%--                        <a class="nav-link active" aria-current="page" href="https://www.umkc.edu/">Home</a>--%>
-<%--                    </li>--%>
-<%--                    <li class="nav-item">--%>
-<%--                        <a class="nav-link"--%>
-<%--                           href="https://catalog.umkc.edu/general-graduate-academic-regulations-information/graduate-teaching-research-assistantships/"--%>
-<%--                           target="_blank">More--%>
-<%--                            Info</a>--%>
-<%--                    </li>--%>
-<%--                    <li class="nav-item">--%>
-<%--                        <button type="reset" id="logOutBtn" onclick="logOut()">Log Out</button>--%>
-<%--                    </li>--%>
-<%--                </ul>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</nav>--%>
 
 <%-- Head part --%>
 <section id="headpart">

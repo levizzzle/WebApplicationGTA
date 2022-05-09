@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMKC | GTA Application Portal</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/login1.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -24,7 +24,7 @@
 
     <div class="holder">
         <form id="logout" name="logout" class="logout-form"  action="${pageContext.request.contextPath}/Logout" method="GET">
-            <button type="submit" id="logOutBtn">0.0 0.0</button>
+            <button type="submit" id="logOutBtn" disabled="true">0.0 0.0</button>
         </form>
     </div>
 </section>
@@ -33,6 +33,7 @@
     <div class="container-sm">
         <!-- <h1>LOGIN</h1> -->
         <form id="login" name="theform" class="login-form" action="LoginServlet" method="GET">
+<%--            <input type="hidden" id="command" name="command" value="">--%>
             <div class="formField">
                 <input type="text" name="username" placeholder="Username" id="username"
                        title="Enter your UMKC mail" required>

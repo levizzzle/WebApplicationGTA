@@ -1,28 +1,15 @@
-function getInput() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+window.addEventListener("load", function() {
 
-    // Bao 1
-    if (username == "admin1" && password == "12345") {
-        window.location.href = 'admin.html';
-    }
-    // Levi 2
-    if (username == "admin2" && password == "12345") {
-        window.location.href = 'admin.html';
-    }
-    // Lavy 3
-    if (username == "admin3" && password == "12345") {
-        window.location.href = 'admin.html';
-    }
-    // Jared 4
-    if (username == "admin4" && password == "12345") {
-        window.location.href = 'admin.html';
-    }
-    // Parker 5
-    if (username == "admin5" && password == "12345") {
-        window.location.href = 'admin.html';
-    }
-    else {
-        alert("Again!");
-    }
-}
+    let form = document.querySelector("form");
+    form.addEventListener("submit", function (event) {
+        let username = document.querySelector("input[name=username]");
+        let password = document.querySelector("input[name=password]");
+        if ((username.value === "") || (password.value === "")) {
+            alert("Please fill all the information");
+            event.preventDefault();
+        }else if (username.value.includes("@umsystem.edu")===false) {
+            alert("Username have to have @umsystem.edu at the end.")
+            event.preventDefault();
+        }
+    });
+});

@@ -14,6 +14,54 @@ body {
     overflow-y: hidden;
 }
 
+/* Head part */
+#headpart {
+    width: 100%;
+    background: rgb(0, 102, 204);
+    background: linear-gradient(180deg, rgba(0, 102, 204, 1) 0%, rgba(0, 102, 204, 1) 90%, rgb(253, 183, 26, 1) 90%);
+    display: grid;
+    grid-auto-flow: column;
+    height: 85px;
+}
+
+#headpart img {
+    width: clamp(100px, 10vw, 140px);
+    height: clamp(65px, 10vw, 75px);
+    padding-bottom: 15px;
+    cursor: pointer;
+    margin-top: 8px !important;
+}
+
+#headpart .title {
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: clamp(16px, 2vw, 25px);
+    font-weight: 600;
+}
+
+#headpart form {
+    display: grid;
+    align-items: center;
+    justify-items: right;
+}
+
+#logOutBtn {
+    background: rgb(0, 102, 204);
+    text-transform: uppercase;
+    outline: 0;
+    border: 0;
+    font-size: clamp(12px, 10vw, 14px);
+    transition: .5s ease-in-out;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: clamp(80px, 10vw, 10px);
+    margin-right: clamp(10px, 2vw, 20px);
+    height: 30px;
+    color: rgb(0, 102, 204);
+}
+
 /* Body part */
 #bodypart {
     width: 100%;
@@ -21,7 +69,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background2.jpg');
     background-color: rgba(0, 0, 0, 0.5);
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -93,58 +141,6 @@ body {
     color: rgb(253, 183, 26, 1);
 }
 
-#headpart {
-    width: 100%;
-    background: rgb(0, 102, 204);
-    background: linear-gradient(180deg, rgba(0, 102, 204, 1) 0%, rgba(0, 102, 204, 1) 90%, rgb(253, 183, 26, 1) 90%);
-    display: grid;
-    grid-auto-flow: column;
-}
 
-#headpart img {
-    width: clamp(100px, 10vw, 140px);
-    height: 75px;
-    padding-bottom: 15px;
-    cursor: pointer;
-    margin-top: 8px !important;
-}
 
-#headpart .title {
-    margin: auto;
-    text-align: center;
-    color: white;
-    font-size: clamp(18px, 2vw, 25px);
-    font-weight: 600;
-}
 
-#headpart form {
-    display: grid;
-    align-items: center;
-    justify-items: right;
-}
-
-#logOutBtn {
-    background: rgb(255, 213, 47, 1);
-    text-transform: uppercase;
-    outline: 0;
-    border: 0;
-    font-size: 14px;
-    transition: .5s ease-in-out;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    width: 100px;
-    margin-right: 20px;
-    height: 30px;
-}
-
-#logOutBtn:hover {
-    background: rgb(253, 183, 26, 1);
-    color: #42526e;
-    font-weight: bold;
-}
-
-.holder {
-    display: grid;
-    align-items: center;
-}

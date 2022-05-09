@@ -19,98 +19,156 @@ body::-webkit-scrollbar {
 }
 
 /* Navbar CSS */
-.navbar {
+/*.navbar {*/
+/*    width: 100%;*/
+/*    background: rgb(0, 102, 204);*/
+/*    background: linear-gradient(180deg, rgba(0, 102, 204, 1) 0%, rgba(0, 102, 204, 1) 90%, rgb(253, 183, 26, 1) 90%);*/
+/*}*/
+
+/*.container-fluid {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*}*/
+
+/*.navbar-toggler:hover {*/
+/*    transition: 650ms cubic-bezier(0.13, -0.36, 1, 1.24) !important;*/
+/*    color: white !important;*/
+/*}*/
+
+/*.container-fluid img {*/
+/*    float: left;*/
+/*    width: clamp(100px, 10vw, 140px);*/
+/*    height: auto;*/
+/*    padding-bottom: 15px;*/
+/*    margin-top: 5px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*#offcanvasNavbar {*/
+/*    !* background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%); *!*/
+/*    background: rgb(4, 72, 127);*/
+/*}*/
+
+/*.offcanvas-header {*/
+/*    border-bottom: white solid;*/
+/*}*/
+
+/*.offcanvas-header h2 {*/
+/*    font-weight: bold;*/
+/*    color: white;*/
+/*}*/
+
+/*.offcanvas-body {*/
+/*    margin: auto;*/
+/*}*/
+
+/*.nav-item:not(:last-child) {*/
+/*    width: 100%;*/
+/*    font-size: 25px;*/
+/*    font-family: sans-serif;*/
+/*    margin: 0 0 15px 0;*/
+/*    text-align: center;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.nav-item:nth-child(1) {*/
+/*    margin-top: 15px;*/
+/*}*/
+
+/*.nav-item:last-child {*/
+/*    margin-bottom: 5px;*/
+/*    position: absolute;*/
+/*    bottom: 1%;*/
+/*}*/
+
+/*.nav-link {*/
+/*    color: white !important;*/
+/*}*/
+
+/*#logOutBtn {*/
+/*    display: inline-block;*/
+/*    outline: 0;*/
+/*    border: 0;*/
+/*    cursor: pointer;*/
+/*    transition: box-shadow 0.15s ease, transform 0.15s ease;*/
+/*    will-change: box-shadow, transform;*/
+/*    background: rgb(252, 252, 253);*/
+/*    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(214, 214, 231);*/
+/*    height: 48px;*/
+/*    padding: 0 32px;*/
+/*    font-size: 18px;*/
+/*    border-radius: 6px;*/
+/*    color: rgb(54, 57, 90);*/
+/*    transition: box-shadow 0.3s ease, transform 0.3s ease;*/
+/*}*/
+
+/*#logOutBtn:hover {*/
+/*    background: rgb(231, 231, 231);*/
+/*    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(253, 183, 26, 1);*/
+/*    transform: translateY(-5px);*/
+/*}*/
+
+/*#logOutBtn:active {*/
+/*    box-shadow: inset 0px 3px 7px rgb(214, 214, 231);*/
+/*    transform: translateY(5px);*/
+/*}*/
+
+/* Head part */
+#headpart {
     width: 100%;
     background: rgb(0, 102, 204);
     background: linear-gradient(180deg, rgba(0, 102, 204, 1) 0%, rgba(0, 102, 204, 1) 90%, rgb(253, 183, 26, 1) 90%);
+    display: grid;
+    grid-auto-flow: column;
+    height: 85px;
 }
 
-.container-fluid {
-    width: 100%;
-    display: flex;
-}
-
-.navbar-toggler:hover {
-    transition: 650ms cubic-bezier(0.13, -0.36, 1, 1.24) !important;
-    color: white !important;
-}
-
-.container-fluid img {
-    float: left;
+#headpart img {
     width: clamp(100px, 10vw, 140px);
-    height: auto;
+    height: clamp(65px, 10vw, 75px);
     padding-bottom: 15px;
-    margin-top: 5px;
     cursor: pointer;
+    margin-top: 8px !important;
 }
 
-#offcanvasNavbar {
-    /* background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%); */
-    background: rgb(4, 72, 127);
-}
-
-.offcanvas-header {
-    border-bottom: white solid;
-}
-
-.offcanvas-header h2 {
-    font-weight: bold;
-    color: white;
-}
-
-.offcanvas-body {
+#headpart .title {
     margin: auto;
-}
-
-.nav-item:not(:last-child) {
-    width: 100%;
-    font-size: 25px;
-    font-family: sans-serif;
-    margin: 0 0 15px 0;
     text-align: center;
-    font-weight: bold;
+    color: white;
+    font-size: clamp(16px, 2vw, 25px);
+    font-weight: 600;
 }
 
-.nav-item:nth-child(1) {
-    margin-top: 15px;
-}
-
-.nav-item:last-child {
-    margin-bottom: 5px;
-    position: absolute;
-    bottom: 1%;
-}
-
-.nav-link {
-    color: white !important;
+#headpart form {
+    display: grid;
+    align-items: center;
+    justify-items: right;
 }
 
 #logOutBtn {
-    display: inline-block;
+    background: rgb(255, 213, 47, 1);
+    text-transform: uppercase;
     outline: 0;
     border: 0;
+    font-size: clamp(12px, 10vw, 14px);
+    transition: .5s ease-in-out;
+    border-radius: 5px;
     cursor: pointer;
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
-    will-change: box-shadow, transform;
-    background: rgb(252, 252, 253);
-    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(214, 214, 231);
-    height: 48px;
-    padding: 0 32px;
-    font-size: 18px;
-    border-radius: 6px;
-    color: rgb(54, 57, 90);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    width: clamp(80px, 10vw, 10px);
+    margin-right: clamp(10px, 2vw, 20px);
+    height: 30px;
 }
 
 #logOutBtn:hover {
-    background: rgb(231, 231, 231);
-    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(253, 183, 26, 1);
-    transform: translateY(-5px);
+    background: rgb(253, 183, 26, 1);
+    color: #42526e;
+    font-weight: bold;
 }
 
-#logOutBtn:active {
-    box-shadow: inset 0px 3px 7px rgb(214, 214, 231);
-    transform: translateY(5px);
+.holder {
+    display: grid;
+    align-items: center;
 }
 
 /* GTA page CSS */

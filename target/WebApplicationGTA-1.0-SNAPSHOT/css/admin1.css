@@ -5,24 +5,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-<<<<<<< HEAD
-#sorting button {
-    width: 10%;
-    background: rgb(255, 213, 47, 1);
-    text-transform: uppercase;
-    outline: 0;
-    border: 0;
-    margin-bottom: 20px;
-    padding: 15px;
-    font-size: 14px;
-    letter-spacing: 1px;
-    transition: .5s ease-in-out;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-=======
->>>>>>> origin/LavyFix
 body {
     width: 100%;
     height: 100vh;
@@ -30,20 +12,11 @@ body {
     /* Firefox */
     overflow-x: hidden;
     overflow-y: hidden;
-<<<<<<< HEAD
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background4.jpg');
-=======
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background4.jpg');
->>>>>>> origin/LavyFix
     background-color: rgba(0, 0, 0, 0.5);
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-<<<<<<< HEAD
-}
-
-=======
-    color: white !important;
 }
 
 /* Head part */
@@ -105,7 +78,6 @@ body {
 }
 
 /* Subhead part */
->>>>>>> origin/LavyFix
 #subheadpart {
     width: 100%;
     height: 4%;
@@ -118,10 +90,7 @@ body {
     background-color: #04487F;
     color: white;
     font-weight: 600;
-<<<<<<< HEAD
-=======
     font-size: clamp(12px, 8vw, 16px);
->>>>>>> origin/LavyFix
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: all 350ms;
 }
@@ -136,30 +105,15 @@ body {
     transform: translateY(-1px);
 }
 
-<<<<<<< HEAD
-table th{
-    background: rgb(0, 102, 204, 1);
-}
-table th:hover{
-    background: rgb(253, 183, 26, 1);
-    color: #04487F;
-}
-
-=======
 
 /* Body part */
->>>>>>> origin/LavyFix
 .table-responsive-lg {
     height: 100%;
     margin: 5% 5%;
     background-color: transparent;
 }
 
-<<<<<<< HEAD
 caption {
-=======
- caption {
->>>>>>> origin/LavyFix
     text-align: center !important;
     text-transform: uppercase;
     font-size: 45px;
@@ -170,92 +124,24 @@ caption {
     -webkit-text-stroke: 1.25px #ececec;
 }
 
-<<<<<<< HEAD
-table td {
-    background-color: white !important;
-    opacity: 0.7;
-=======
 table tbody {
     color: black !important;
 }
 
 table td {
->>>>>>> origin/LavyFix
+    background-color: white !important;
+    opacity: 0.7;
     font-weight: bolder;
     text-align: center;
 }
 
 table.sortable thead {
-<<<<<<< HEAD
     background-color:#04487F;
     color:#FFFFFF;
     font-weight: bolder;
-    cursor: default;
-    text-align: center;
-}
-
-#headpart {
-    width: 100%;
-    background: rgb(0, 102, 204);
-    background: linear-gradient(180deg, rgba(0, 102, 204, 1) 0%, rgba(0, 102, 204, 1) 90%, rgb(253, 183, 26, 1) 90%);
-    display: grid;
-    grid-auto-flow: column;
-}
-
-#headpart img {
-    width: clamp(100px, 10vw, 140px);
-    height: 75px;
-    padding-bottom: 15px;
-    cursor: pointer;
-    margin-top: 8px !important;
-}
-
-#headpart .title {
-    margin: auto;
-    text-align: center;
-    color: white;
-    font-size: clamp(18px, 2vw, 25px);
-    font-weight: 600;
-}
-
-#headpart form {
-    display: grid;
-    align-items: center;
-    justify-items: right;
-}
-
-#logOutBtn {
-    background: rgb(255, 213, 47, 1);
-    text-transform: uppercase;
-    outline: 0;
-    border: 0;
-    font-size: 14px;
-    transition: .5s ease-in-out;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    width: 100px;
-    margin-right: 20px;
-    height: 30px;
-}
-
-#logOutBtn:hover {
-    background: rgb(253, 183, 26, 1);
-    color: #42526e;
-    font-weight: bold;
-}
-
-.holder {
-    display: grid;
-    align-items: center;
-}
-=======
-    color:#FFFFFF;
-    font-weight: bolder;
     cursor: pointer;
     text-align: center;
 }
 
 
 
->>>>>>> origin/LavyFix

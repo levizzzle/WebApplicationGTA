@@ -78,40 +78,46 @@ body {
 
 .container-sm {
     max-width: 400px !important;
-    max-height: 300px !important;
+    /*background: linear-gradient(rgb(255, 255, 255, 0.9));*/
+    padding: 5% 3%;
     border-radius: 10px;
     position: relative;
     margin: auto;
     padding: 45px;
     text-align: center;
-    /*background: rgba(13, 202, 240, 0.5) !important;*/
-    background: rgba(0, 0, 0, 0.5) !important;
-    /* box-shadow: 0 0 20px 0 rgba(13, 202, 240, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.6); */
+    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.6); */
 }
 
 .container-sm h1 {
-    font-size: clamp(30px, 2vw, 40px);
-    font-weight: bold;
+    font-size: 40px;
     letter-spacing: 2px;
     margin-bottom: 20px;
     color: white;
 }
 
-.container-sm h2 {
-    font-size: clamp(22px, 2vw, 30px);;
-    font-weight: bold;
-    color: white !important;
+.container-sm input {
+    background: #f2f2f2;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    border-radius: 100px;
 }
 
 .container-sm button {
-    width: 100px;
+    width: 150px;
     background: rgb(255, 213, 47, 1);
     text-transform: uppercase;
     outline: 0;
     border: 0;
-    margin: 20px 0 5px 0;
-    padding: 6px;
+    margin: 30px 0 20px 0;
+    padding: 15px;
     font-size: 14px;
+    letter-spacing: 1px;
     transition: .5s ease-in-out;
     border-radius: 5px;
     cursor: pointer;
@@ -121,8 +127,19 @@ body {
     background: rgb(253, 183, 26, 1);
 }
 
+.container-sm p {
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+}
 
+.container-sm p a {
+    color: rgb(255, 213, 47, 1);
+    letter-spacing: 1px;
+}
 
+.container-sm p a:hover {
+    color: rgb(253, 183, 26, 1);
+}
 
 
 

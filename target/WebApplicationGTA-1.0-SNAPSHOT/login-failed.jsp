@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMKC | GTA Application Portal</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/login-failed.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,7 +31,9 @@
 
 <section id="bodypart">
     <div class="container-sm">
-        <!-- <h1>LOGIN</h1> -->
+        <h1>LOGIN FAIL !!!</h1>
+        <h2>Please check your username and password, then try again.</h2>
+        <button type="submit" class="submitbtn" >Try Again</button>
     </div>
 </section>
 
